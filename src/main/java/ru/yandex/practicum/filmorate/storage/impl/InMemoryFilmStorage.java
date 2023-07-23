@@ -64,6 +64,11 @@ public class InMemoryFilmStorage implements FilmStorage {
 
     }
 
+    @Override
+    public void deleteFilmById(int id) {
+
+    }
+
     private Integer generateId() {
         idManager++;
         return idManager;

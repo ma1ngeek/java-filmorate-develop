@@ -19,4 +19,6 @@ public interface FilmService {
     Film putLikesFilm(int id, int userId);
 
     Film deleteLikesFilm(int id, int userId);
+
+    void deleteFilmById(int id);
 }

@@ -56,6 +56,10 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    public void deleteUserById(int id) {
+        userStorage.deleteUserById(id);
+    }
+
     @Override
     public void putFriend(int id, int friendId) {
         log.debug("+ addFriend : {}", id);

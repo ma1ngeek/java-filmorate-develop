@@ -17,7 +17,6 @@ import java.util.List;
 @Service
 public class FilmServiceImpl implements FilmService {
 
-
     private final FilmStorage filmStorage;
     private final FilmValidator filmValidator;
 
@@ -70,6 +69,10 @@ public class FilmServiceImpl implements FilmService {
         Film film = filmStorage.getFilm(id);
         log.debug("- film: {}", film);
         return film;
+    }
+
+    public void deleteFilmById(int id) {
+        filmStorage.deleteFilmById(id);
     }
 
     @Override

@@ -112,6 +112,15 @@ public class FilmDBStorage implements FilmStorage {
     }
 
     @Override
+    public void deleteFilmById(int id) {
+        String sqlQuery = "delete from film where id = ?";
+        int upd = jdbcTemplate.update(sqlQuery, id);
+        if (upd == 0) {
+            throw new FilmNotFoundException("Фильм с Id " + id + " не найден");
+        }
+    }
+
+    @Override
     public void addLike(Integer filmId, Integer userId) {
         SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate.getDataSource())
                 .withTableName("film_likes");
